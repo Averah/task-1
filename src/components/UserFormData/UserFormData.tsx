@@ -1,7 +1,4 @@
-
 import React from 'react';
-import { observer } from 'mobx-react-lite';
-import userFormData from "../../store/userFormStore";
 import styles from './UserFormData.module.css';
 import { memo } from 'react';
 

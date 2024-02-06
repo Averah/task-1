@@ -16,12 +16,12 @@ export const SwitchColorsButton: React.FC<SwitchColorsButtonProps> = memo(({ cla
     const btnStyle = useMemo<CSSProperties>(() => ({
         color: switchColors[currentColorIdx]?.textColor,
         background: switchColors[currentColorIdx]?.background,
-    }), [currentColorIdx]);
+    }), [currentColorIdx, switchColors]);
 
 
     const handleClick = useCallback(() => {
         setCurrentColorIdx(prevIdx => prevIdx === switchColors.length - 1 ? 0 : prevIdx + 1);
-    }, []);
+    }, [switchColors.length]);
 
     return (
         <Button onClick={handleClick} style={btnStyle} className={className} {...otherProps}>

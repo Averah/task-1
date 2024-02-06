@@ -14,8 +14,8 @@ const ButtonPage: React.FC = memo(() => {
 
     return (
         <PageLayout>
-            <b>Button Page</b>
-            <SwitchColorsButton switchColors={switchColors}>Кнопка</SwitchColorsButton>
+                <b>Button Page</b>
+                <SwitchColorsButton switchColors={switchColors}>Кнопка</SwitchColorsButton>
         </PageLayout>
 
     )
