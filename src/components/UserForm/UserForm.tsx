@@ -30,31 +30,35 @@ export const UserForm: React.FC<FormProps> = memo(({ sendData }) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={styles.Form}>
             <div className={styles.formInputs}>
-                <Input
-                    placeholder="Введите e-mail"
-                    type="email"
-                    {...register('email', {
-                        required: 'E-mail обязателен',
-                        pattern: {
-                            value: /\S+@\S+\.\S+/,
-                            message: 'Некорректный e-mail',
-                        },
-                    })}
-                />
-                <div className={styles.emailError}>
-                    {errors?.email && (`${errors.email?.message}` || 'Ошибка')}
-                </div>
-                <div className={styles.passwordContainer}>
+                <div>
                     <Input
-                        placeholder="Введите пароль"
-                        className={styles.passwordInput}
-                        type={passwordShown ? 'text' : 'password'}
-                        {...register('password', { required: 'Пароль обязателен' })}
+                        placeholder="Введите e-mail"
+                        type="email"
+                        {...register('email', {
+                            required: 'E-mail обязателен',
+                            pattern: {
+                                value: /\S+@\S+\.\S+/,
+                                message: 'Некорректный e-mail',
+                            },
+                        })}
                     />
-                    <EyeIcon className={styles.passwordIcon} onClick={togglePasswordVisibility} />
+                    <div className={styles.emailError}>
+                        {errors?.email && (`${errors.email?.message}` || 'Ошибка')}
+                    </div>
                 </div>
-                <div className={styles.passwordError}>
-                    {errors?.password && (`${errors.password?.message}` || 'Ошибка')}
+                <div>
+                    <div className={styles.passwordContainer}>
+                        <Input
+                            placeholder="Введите пароль"
+                            className={styles.passwordInput}
+                            type={passwordShown ? 'text' : 'password'}
+                            {...register('password', { required: 'Пароль обязателен' })}
+                        />
+                        <EyeIcon className={styles.passwordIcon} onClick={togglePasswordVisibility} />
+                    </div>
+                    <div className={styles.passwordError}>
+                        {errors?.password && (`${errors.password?.message}` || 'Ошибка')}
+                    </div>
                 </div>
             </div>
             <textarea maxLength={300} placeholder="Введите доп. информацию"  {...register('extraInfo')} />

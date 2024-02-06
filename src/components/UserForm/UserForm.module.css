@@ -1,6 +1,7 @@
 .Form {
     padding: 20px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -31,12 +32,15 @@
 
 .emailError, .passwordError{
     color:#e76262;
+    min-height: 21px;
+    font-size: 0.8rem;
 }
 
 .passwordIcon {
     width: 20px;
+    height: 100%;
     position: absolute;
-    top: 20%;
+    top: 0px;
     right: 0.5%;
     fill: rgba(78, 77, 78, 0.72);;
     transition: 0.4s;

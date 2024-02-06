@@ -11,6 +11,13 @@
   gap: 20px;
 }
 
+@media (max-width: 585px) {
+  .yearTitle {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .calendar {
   display: flex;
   justify-content: center;
@@ -20,7 +27,9 @@
 
 .month {
   border: 1px solid #ccc;
-  width: 350px;
+  max-width: 350px;
+  width: 100%;
+  min-width: 240px;
   height: 180px;
   border-radius: 5px;
   padding: 10px;
