@@ -30,4 +30,4 @@ class UserFormStore {
     }
 }
 
-export default new UserFormStore()
+export default new UserFormStore();

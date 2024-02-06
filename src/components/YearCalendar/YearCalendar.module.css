@@ -1,0 +1,50 @@
+.YearCalendar {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.yearTitle {
+  display: flex;
+  gap: 20px;
+}
+
+.calendar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.month {
+  border: 1px solid #ccc;
+  width: 350px;
+  height: 180px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.monthTitle {
+  font-weight: 600;
+}
+
+.daysList {
+  height: 130px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day {
+  width: 14.28%;
+  text-align: center;
+}

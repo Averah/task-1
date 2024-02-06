@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { ReactComponent as EyeIcon } from '../../assets/eyeIcon.svg';
 import styles from './UserForm.module.css'
 import { Input } from '../../ui/Input/Input';
+import Button from "../../ui/Button/Button";
 
 interface SubmitType {
     email: string
@@ -62,9 +63,9 @@ export const UserForm: React.FC<FormProps> = memo(({ sendData }) => {
                 </div>
             </div>
             <textarea maxLength={300} placeholder="Введите доп. информацию"  {...register('extraInfo')} />
-            <button type="submit" className={styles.submitBtn}>
+            <Button type="submit" className={styles.submitBtn}>
                 Отправить
-            </button>
+            </Button>
 
         </form>
     );
