@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import cn from 'classnames';
 import styles from './Button.module.css';
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: React.FC<ButtonProps> = memo(({ children, className, ...otherProps }) => {
     return (

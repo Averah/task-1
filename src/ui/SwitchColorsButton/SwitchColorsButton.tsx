@@ -1,12 +1,12 @@
 import React, { CSSProperties, memo, useCallback, useMemo, useState } from 'react';
-import Button from '../Button/Button';
+import Button, { ButtonProps } from '../Button/Button';
 
 export interface ColorStyle {
     background: string;
     textColor: string;
 }
 
-interface SwitchColorsButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface SwitchColorsButtonProps extends ButtonProps {
     switchColors: ColorStyle[];
 }
 

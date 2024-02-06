@@ -4,13 +4,13 @@ import calendarStore from '../../store/calendarStore';
 import Button from '../../ui/Button/Button';
 import styles from './YearCalendar.module.css';
 
-const YearCalendar: React.FC = observer((props) => {
-    const year = calendarStore.year;
-    const [calendar, setCalendar] = useState([]);
+const getDaysInMonth = (month: number, year: number) => {
+    return new Date(year, month + 1, 0).getDate();
+};
 
-    const getDaysInMonth = (month: number, year: number) => {
-        return new Date(year, month + 1, 0).getDate();
-    };
+const YearCalendar: React.FC = observer(() => {
+    const year = calendarStore.year;
+    const [calendar, setCalendar] = useState<JSX.Element[]>([]);
 
     const setPrevYear = useCallback(() => calendarStore.setPrevYear(), []);
     const setNextYear = useCallback(() => calendarStore.setNextYear(), []);
@@ -31,7 +31,7 @@ const YearCalendar: React.FC = observer((props) => {
                 </div>
             );
         }
-        //@ts-ignore
+
         setCalendar(newCalendar);
     }, [year]);
 

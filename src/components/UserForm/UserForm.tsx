@@ -4,15 +4,10 @@ import { ReactComponent as EyeIcon } from '../../assets/eyeIcon.svg';
 import styles from './UserForm.module.css'
 import { Input } from '../../ui/Input/Input';
 import Button from "../../ui/Button/Button";
-
-interface SubmitType {
-    email: string
-    password: string
-    extraInfo: string
-}
+import { IFormData } from "../../store/userFormStore";
 
 interface FormProps {
-    sendData: (data: SubmitType) => void
+    sendData: (data: IFormData) => void
 }
 
 export const UserForm: React.FC<FormProps> = memo(({ sendData }) => {
@@ -26,9 +21,9 @@ export const UserForm: React.FC<FormProps> = memo(({ sendData }) => {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<SubmitType>({ mode: 'onBlur' });
+    } = useForm<IFormData>({ mode: 'onBlur' });
 
-    const onSubmit = (data: SubmitType) => {
+    const onSubmit = (data: IFormData) => {
         sendData(data);
     };
 

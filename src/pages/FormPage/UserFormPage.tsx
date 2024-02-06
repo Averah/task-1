@@ -14,7 +14,7 @@ const UserFormPage:React.FC = observer(() => {
     }, [])
 
     useEffect(() => {
-        return userFormData.clearUserData();
+        return () => userFormData.clearUserData();
     }, [])
 
     return (
