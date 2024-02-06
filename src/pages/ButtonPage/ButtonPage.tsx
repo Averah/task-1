@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { memo } from 'react';
+import { PageLayout } from "../../components/PageLayout/PageLayout";
 import { ColorStyle, SwitchColorsButton } from "../../ui/SwitchColorsButton/SwitchColorsButton";
-import styles from './ButtonPage.module.css';
 
 const ButtonPage: React.FC = memo(() => {
 
@@ -13,10 +13,11 @@ const ButtonPage: React.FC = memo(() => {
         ], [])
 
     return (
-        <div className={styles.ButtonPage}>
+        <PageLayout>
             <b>Button Page</b>
             <SwitchColorsButton switchColors={switchColors}>Кнопка</SwitchColorsButton>
-        </div>
+        </PageLayout>
+
     )
 });
 

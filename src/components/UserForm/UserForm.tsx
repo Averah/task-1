@@ -21,10 +21,12 @@ export const UserForm: React.FC<FormProps> = memo(({ sendData }) => {
         register,
         handleSubmit,
         formState: { errors },
+        reset,
     } = useForm<IFormData>({ mode: 'onBlur' });
 
     const onSubmit = (data: IFormData) => {
         sendData(data);
+        reset();
     };
 
     return (
